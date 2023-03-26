@@ -11,13 +11,13 @@ const InfoBoxes = () => {
   return (
     <Grid container spacing={2} rowSpacing={3} alignItems="stretch">
       <Grid item xs={12} md={4}>
-        <InforBoxItem text={"capital"} amount={`$${data.capital}`}></InforBoxItem>
+        <InforBoxItem text={"Capital"} amount={`$${data.capital}`}></InforBoxItem>
       </Grid>
       <Grid item xs={12} md={4}>
         <InforBoxItem text={"Scheme Type"} amount={data.schemeType}></InforBoxItem>
       </Grid>
       <Grid item xs={12} md={4}>
-        <InforBoxItem text={"profil percentage"} amount={data.profilPercentage}></InforBoxItem>
+        <InforBoxItem text={"Profit %"} amount={`${data.profilPercentage}%`}></InforBoxItem>
       </Grid>
     </Grid>
   );

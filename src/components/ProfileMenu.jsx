@@ -20,6 +20,9 @@ export const ProfileMenu = () => {
         <Typography variant="body1" className="text-gray-500">
           client
         </Typography>
+        <Typography variant="body2" className=" mt-2 text-gray-700">
+          {data.email}
+        </Typography>
       </Box>
       <Box sx={{ mt: 5, w: 10, h: 10, borderRadius: 5 }} className="bg-gray-100 h-40"></Box>
       <Box className="transactions" sx={{ mt: "auto", mb: 5 }}>
@@ -34,24 +37,13 @@ export const ProfileMenu = () => {
               </Avatar>
             </ListItemAvatar>
             <ListItemText
-              primary="To Philip kelly"
+              primary={`${data.schemeType}`}
               primaryTypographyProps={{ className: "text-sm font-semibold text-gray-700" }}
               secondary="invested"
             ></ListItemText>
-            <Typography className=" text-sm font-semibold text-gray-700">+$450</Typography>
-          </ListItem>
-          <ListItem disableGutters alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar variant="rounded" sx={{ borderRadius: 4, bgcolor: "#ebfaf0", color: "#77e09e" }}>
-                <ArrowOutwardRounded />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary="To Philip kelly"
-              primaryTypographyProps={{ className: "text-sm font-semibold text-gray-700" }}
-              secondary="invested"
-            ></ListItemText>
-            <Typography className=" text-sm font-semibold text-gray-700">+$450</Typography>
+            <Typography className=" text-sm font-semibold text-gray-700">{`+$${
+              parseInt(data.capital.replace(/,/g, "")) / 1000
+            }K`}</Typography>
           </ListItem>
         </List>
       </Box>
