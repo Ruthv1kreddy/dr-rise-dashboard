@@ -56,21 +56,21 @@ const Signup = () => {
             className="App"
             sx={{
               position: "relative",
-              bgcolor: "white",
+              bgcolor: "#DBF5F5",
               px: 3,
               pb: 4,
               pt: 0,
-              boxShadow: shadows[10],
+              boxShadow: shadows[3],
               borderRadius: 3,
             }}
           >
             <Box
-              className="shadow-blue-200 shadow-xl space-y-10"
+              className="shadow-[#d5eeee] shadow-xl space-y-10"
               sx={{
                 border: "1px solid gray[500]",
                 position: "relative",
                 top: "-20px",
-                bgcolor: blue[600],
+                bgcolor: "#1dbfc1",
                 opacity: 1,
                 zIndex: 1000,
                 minHeight: "100px",
@@ -81,10 +81,16 @@ const Signup = () => {
                 borderRadius: 3,
               }}
             >
-              <Typography variant="h5" textAlign={"center"} color={"white"} fontWeight="400">
+              <Typography
+                variant="h5"
+                textAlign={"center"}
+                color={"white"}
+                fontWeight="400"
+                className="font-sans font-semibold"
+              >
                 Log In
               </Typography>
-              <Typography variant="body2" textAlign={"center"} color={grey[300]} fontWeight="300">
+              <Typography variant="body2" textAlign={"center"} color={grey[200]} fontWeight="300">
                 Enter your email and password to register
               </Typography>
             </Box>
@@ -109,17 +115,17 @@ const Signup = () => {
                     },
                     "&:hover.Mui-focused fieldset": {
                       // borderColor: "#1976d2",
-                      borderColor: blue[400],
+                      borderColor: "#1dbfc1",
                     },
                     "&.Mui-focused": {
                       // boxShadow: `${alpha("#1976d2", 0.25)} 0 0 0 2px`,
                       // borderWidth: 2,
-                      borderColor: blue[400],
+                      borderColor: "#1dbfc1",
                     },
                     "&.Mui-focused fieldset": {
                       // boxShadow: `${alpha("#1976d2", 0.25)} 0 0 0 2px`,
                       borderWidth: 2,
-                      borderColor: blue[400],
+                      borderColor: "#1dbfc1",
                     },
                   },
                 }}
@@ -144,17 +150,21 @@ const Signup = () => {
                     },
                     "&:hover.Mui-focused fieldset": {
                       // borderColor: "#1976d2",
-                      borderColor: blue[400],
+                      borderColor: "#1dbfc1",
                     },
                     "&.Mui-focused": {
                       // boxShadow: `${alpha("#1976d2", 0.25)} 0 0 0 2px`,
                       // borderWidth: 2,
-                      borderColor: blue[400],
+                      backgroundColor: "transparent",
+                      borderColor: "#1dbfc1",
+                    },
+                    "& .MuiInputBase-input": {
+                      backgroundColor: "transparent",
                     },
                     "&.Mui-focused fieldset": {
                       // boxShadow: `${alpha("#1976d2", 0.25)} 0 0 0 2px`,
                       borderWidth: 2,
-                      borderColor: blue[400],
+                      borderColor: "#1dbfc1",
                     },
                   },
                 }}
@@ -184,7 +194,7 @@ const Signup = () => {
               </FormControl>
               <Button
                 variant="contained"
-                className="bg-blue-500 hover:shadow-blue-200 hover:shadow-lg mt-10"
+                className="bg-[#1dbfc1] hover:shadow-blue-200 hover:shadow-lg mt-10 text-white"
                 sx={{ mt: 5 }}
                 onClick={handleSubmit}
                 disabled={!validinput || navigation.state == "submitting"}
@@ -194,7 +204,7 @@ const Signup = () => {
                   <CircularProgress
                     size={24}
                     sx={{
-                      color: blue[50],
+                      color: "white",
                       position: "absolute",
                       top: "50%",
                       left: "50%",

@@ -39,13 +39,21 @@ export const ProfileMenu = () => {
             <ListItemText
               primary={`${data.schemeType}`}
               primaryTypographyProps={{ className: "text-sm font-semibold text-gray-700" }}
-              secondary="invested"
+              secondary="Invested"
             ></ListItemText>
             <Typography className=" text-sm font-semibold text-gray-700">{`+$${
-              parseInt(data.capital.replace(/,/g, "")) / 1000
+              !isNaN(data.capital) ? data.capital / 1000 : parseInt(data.capital.replace(/,/g, "")) / 1000
             }K`}</Typography>
           </ListItem>
         </List>
+      </Box>
+      <Box sx={{ display: { xs: "block", lg: "none" } }}>
+        <Typography align="center" variant="body2" className="font-sans font-semibold text-gray-500">
+          Copyright © 2023 Dr. Rise
+        </Typography>
+        <Typography align="center" variant="body2" className="font-sans font-semibold text-gray-500">
+          Powered by Dr. Rise
+        </Typography>
       </Box>
     </>
   );

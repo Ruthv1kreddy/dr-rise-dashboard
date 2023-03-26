@@ -21,7 +21,7 @@ const InforBoxItem = (props) => {
           top: -27,
         }}
       >
-        <Person></Person>
+        {props.icon}
       </Avatar>
       <Stack direction={"column"} className="inline-block" justifyItems={"flex-end"}>
         <Typography align="right" variant="body2" className="text-gray-500 font-thin">

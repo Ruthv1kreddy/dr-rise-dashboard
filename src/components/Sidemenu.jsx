@@ -1,5 +1,5 @@
 import { HomeRounded, LogoutRounded, Person, TextSnippetRounded } from "@mui/icons-material";
-import { AppBar, Box, Button, IconButton, Stack, Toolbar } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { signOut } from "firebase/auth";
 import React from "react";
@@ -25,7 +25,7 @@ export const Sidemenu = (props) => {
         <Stack direction={"column"} sx={{ mt: 10 }} className="space-y-4">
           <Button
             startIcon={<HomeRounded />}
-            className="text-[#5E37FF] font-normal text-lg justify-start capitalize"
+            className="text-[#5E37FF] font-semibold text-md justify-start capitalize"
             // component={<NavLink />}
             sx={{
               color: "#5E37FF",
@@ -80,6 +80,14 @@ export const Sidemenu = (props) => {
             Documents
           </Button>
         </Stack>
+        <Box sx={{ mt: "", flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <Typography align="center" variant="body2" className="font-sans font-semibold text-gray-500">
+            Copyright © 2023 Dr. Rise
+          </Typography>
+          <Typography align="center" variant="body2" className="font-sans font-semibold text-gray-500">
+            Powered by Dr. Rise
+          </Typography>
+        </Box>
       </Box>
       <AppBar
         sx={{
@@ -98,7 +106,7 @@ export const Sidemenu = (props) => {
         className="bg-white shadow-sm"
       >
         <Toolbar className="h-full justify-between items-center py-0 text-gray-400">
-          <IconButton>
+          <IconButton color="#5e37ff" sx={{ color: "#5e37ff" }}>
             <HomeRounded />
           </IconButton>
           <IconButton onClick={Signouthelper}>
