@@ -1,0 +1,50 @@
+.card {
+  position: relative;
+  /* background-image: url("images/bg.png"); */
+  background-color: #5e37ff;
+  background-size: cover;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 28px;
+  min-width: 300px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+header,
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+header .chip {
+  width: 60px;
+}
+h6 {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+}
+h5.number {
+  /* margin-top: 4px; */
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+h5.name {
+  /* margin-top: 0px; */
+}
+.card .card-details {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
