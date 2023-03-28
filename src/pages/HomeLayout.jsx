@@ -18,11 +18,12 @@ import {
   ListItemIcon,
   ListItemText,
   Stack,
+  SwipeableDrawer,
   Typography,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 import Creditcard from "../components/Creditcard";
 import { ProfileMenu } from "../components/ProfileMenu";
@@ -30,6 +31,11 @@ import { Sidemenu } from "../components/Sidemenu";
 
 function HomeLayout() {
   const [MenuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
   return (
     <div className="bg-white w-screen h-screen flex flex-row items-center">
       <Sidemenu
@@ -46,7 +52,7 @@ function HomeLayout() {
         flexDirection={"column"}
       >
         <ProfileMenu />
-        <Drawer
+        <SwipeableDrawer
           anchor={"right"}
           sx={{
             "& .MuiPaper-root": {
@@ -60,7 +66,7 @@ function HomeLayout() {
           }}
         >
           <ProfileMenu></ProfileMenu>
-        </Drawer>
+        </SwipeableDrawer>
       </Box>
     </div>
   );

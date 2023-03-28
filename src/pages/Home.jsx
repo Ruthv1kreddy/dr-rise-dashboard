@@ -15,7 +15,7 @@ function Home() {
     datasets: [
       {
         label: "invested",
-        data: [!isNaN(data.capital) ? data.capital : parseInt(data.capital.replace(/,/g, "")), data.profitAmount],
+        data: [!isNaN(data?.capital) ? data?.capital : parseInt(data?.capital.replace(/,/g, "")), data?.profitAmount],
         offset: 6,
         borderRadius: 6,
         backgroundColor: ["#d7d7f1", "#5E37FF"],
@@ -33,17 +33,49 @@ function Home() {
           <Creditcard></Creditcard>
         </Grid>
         <Grid item xs={12} sm={6} md={6} justifyContent="center" display={"flex"}>
-          <Box sx={{ width: "250px", height: "300px" }} className="bg-white rounded-2xl shadow-lg p-3 inline-block">
+          <Box
+            sx={{ width: "250px", height: "300px" }}
+            className="bg-white relative rounded-2xl shadow-lg p-3 inline-block"
+          >
             <Typography variant="h5" className="font-semibold text-gray-500">
               Overview
             </Typography>
+            <Box
+              position={"absolute"}
+              sx={{
+                left: "50%",
+                top: "50%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                transform: "translate(-50%,-50%)",
+                // width: "10px",
+                // height: "10px",
+                // bgcolor: "#5E37FF",
+              }}
+            >
+              <Typography className=" text-lg font-bold text-gray-800">{`₹${
+                data
+                  ? !isNaN(data?.capital)
+                    ? data?.capital / 1000
+                    : parseInt(data?.capital.replace(/,/g, "")) / 1000
+                  : null
+              }K`}</Typography>
+              <Typography
+                align="center"
+                className="bg-[#5E37FF] w-fit font-normal text-center text-xs rounded-md p-1 px-2  text-white"
+              >
+                {`+${data?.profilPercentage}%`}
+              </Typography>
+            </Box>
             <Doughnut
               data={chartdata}
               options={{
                 aspectRatio: 1,
                 plugins: {
                   tooltip: {
-                    enabled: false,
+                    enabled: true,
                   },
                   legend: {
                     position: "bottom",

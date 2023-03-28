@@ -18,7 +18,7 @@ import shadows from "@mui/material/styles/shadows";
 import { alpha, Box, Stack } from "@mui/system";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { redirect, useActionData, useNavigation, useSubmit } from "react-router-dom";
+import { redirect, useActionData, useLocation, useNavigation, useSubmit } from "react-router-dom";
 import auth from "../FirebaseConfig";
 
 const Signup = () => {
@@ -27,6 +27,8 @@ const Signup = () => {
   const [validinput, setvalidinput] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
+  const location = useLocation();
+  // console.log(location.state);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -224,6 +226,7 @@ const Signup = () => {
 
 export default Signup;
 export async function loginaction({ request, params }) {
+  // return redirect("/", { status: 200, statusText: "ok" });
   const data = await request.formData();
   console.log(data.get("email"));
   console.log(data.get("password"));

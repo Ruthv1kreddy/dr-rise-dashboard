@@ -3,7 +3,7 @@ import { AppBar, Box, Button, IconButton, Stack, Toolbar, Typography } from "@mu
 import { grey } from "@mui/material/colors";
 import { signOut } from "firebase/auth";
 import React from "react";
-import { redirect, useNavigate, useNavigation } from "react-router-dom";
+import { Link, redirect, useNavigate, useNavigation } from "react-router-dom";
 import auth from "../FirebaseConfig";
 
 export const Sidemenu = (props) => {
@@ -26,7 +26,8 @@ export const Sidemenu = (props) => {
           <Button
             startIcon={<HomeRounded />}
             className="text-[#5E37FF] font-semibold text-md justify-start capitalize"
-            // component={<NavLink />}
+            component={Link}
+            to="/home"
             sx={{
               color: "#5E37FF",
               p: 2,
@@ -106,7 +107,7 @@ export const Sidemenu = (props) => {
         className="bg-white shadow-sm"
       >
         <Toolbar className="h-full justify-between items-center py-0 text-gray-400">
-          <IconButton color="#5e37ff" sx={{ color: "#5e37ff" }}>
+          <IconButton color="#5e37ff" sx={{ color: "#5e37ff" }} component={Link} to="/home">
             <HomeRounded />
           </IconButton>
           <IconButton onClick={Signouthelper}>

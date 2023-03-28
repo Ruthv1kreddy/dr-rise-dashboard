@@ -12,6 +12,7 @@ import HomeLayout from "./pages/HomeLayout";
 import { onAuthStateChanged } from "firebase/auth";
 import auth from "./FirebaseConfig";
 import { getDatabase, ref, child, get } from "firebase/database";
+import UpdatePassword, { UpdatePasswordAction } from "./pages/UpdatePassword";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -64,6 +65,11 @@ function App() {
         {
           path: "/home",
           element: <Home></Home>,
+        },
+        {
+          path: "update-password",
+          element: <UpdatePassword></UpdatePassword>,
+          action: UpdatePasswordAction,
         },
       ],
     },

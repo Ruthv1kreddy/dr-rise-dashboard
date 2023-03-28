@@ -1,8 +1,8 @@
-import { AccountCircleRounded, ArrowOutwardRounded } from "@mui/icons-material";
+import { AccountCircleRounded, ArrowOutwardRounded, EditRounded } from "@mui/icons-material";
 import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export const ProfileMenu = () => {
   const data = useLoaderData();
@@ -12,16 +12,24 @@ export const ProfileMenu = () => {
         <AccountCircleRounded fontSize="large" sx={{ color: grey[500], fontSize: 70, mb: 2 }}></AccountCircleRounded>
 
         <Typography variant="h5" className="font-semibold text-black">
-          {data.username.split(" ")[0]}
+          {data?.username.split(" ")[0]}
         </Typography>
         <Typography variant="h5" className="font-semibold text-gray-700">
-          {data.username.split(" ")[1]}
+          {data?.username.split(" ").slice(1).join(" ")}
         </Typography>
         <Typography variant="body1" className="text-gray-500">
           client
         </Typography>
         <Typography variant="body2" className=" mt-2 text-gray-700">
-          {data.email}
+          {data?.email}
+        </Typography>
+        <Typography
+          component={Link}
+          to={"/home/update-password"}
+          variant="body2"
+          className=" mt-2 text-[#2F1B7F] font-semibold"
+        >
+          Update Password <EditRounded fontSize="small" sx={{ fontSize: "15px" }}></EditRounded>
         </Typography>
       </Box>
       <Box sx={{ mt: 5, w: 10, h: 10, borderRadius: 5 }} className="bg-gray-100 h-40"></Box>
@@ -37,12 +45,16 @@ export const ProfileMenu = () => {
               </Avatar>
             </ListItemAvatar>
             <ListItemText
-              primary={`${data.schemeType}`}
+              primary={`${data?.schemeType}`}
               primaryTypographyProps={{ className: "text-sm font-semibold text-gray-700" }}
               secondary="Invested"
             ></ListItemText>
-            <Typography className=" text-sm font-semibold text-gray-700">{`+$${
-              !isNaN(data.capital) ? data.capital / 1000 : parseInt(data.capital.replace(/,/g, "")) / 1000
+            <Typography className=" text-sm font-semibold text-gray-700">{`+₹${
+              data
+                ? !isNaN(data?.capital)
+                  ? data?.capital / 1000
+                  : parseInt(data?.capital.replace(/,/g, "")) / 1000
+                : null
             }K`}</Typography>
           </ListItem>
         </List>

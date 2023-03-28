@@ -80,9 +80,6 @@ const MainNavigation = () => {
                 },
               }}
             >
-              <MenuItem className="border-b-2 border-gray-800">
-                <Typography textAlign="center">main</Typography>
-              </MenuItem>
               {pages.map((page, index) => (
                 <MenuItem
                   key={index}

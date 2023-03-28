@@ -14,21 +14,21 @@ const InfoBoxes = () => {
         <InforBoxItem
           icon={<CurrencyRupeeSharp></CurrencyRupeeSharp>}
           text={"Capital"}
-          amount={`$${data.capital}`}
+          amount={`₹${data?.capital}`}
         ></InforBoxItem>
       </Grid>
       <Grid item xs={12} sm={6} md={4}>
         <InforBoxItem
           icon={<AccountBalanceSharp></AccountBalanceSharp>}
           text={"Scheme Type"}
-          amount={data.schemeType}
+          amount={data?.schemeType}
         ></InforBoxItem>
       </Grid>
       <Grid item xs={12} sm={6} md={4}>
         <InforBoxItem
           icon={<TrendingUpRounded></TrendingUpRounded>}
           text={"Profit %"}
-          amount={`${data.profilPercentage}%`}
+          amount={`${data?.profilPercentage}%`}
         ></InforBoxItem>
       </Grid>
     </Grid>

@@ -26,7 +26,7 @@ const Creditcard = () => {
 
       <div className="card-details">
         <div className="name-number">
-          <h5 className="name font-normal">{data.executive}</h5>
+          <h5 className="name font-normal">{data?.executive}</h5>
           <h5 className="holder text-gray-400 font-semibold text-sm">EXECUTIVE</h5>
         </div>
         <div className="valid-date">
